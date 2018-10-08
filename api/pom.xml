@@ -7,7 +7,7 @@
     <parent>
         <groupId>be.guanaco.smx</groupId>
         <artifactId>scheduler</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>be.guanaco.smx.scheduler</groupId>
@@ -34,4 +34,11 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray-guanaco-io-scheduler</id>
+            <name>guanaco-io-scheduler</name>
+            <url>https://api.bintray.com/maven/guanaco-io/scheduler/api/;publish=1</url>
+        </repository>
+    </distributionManagement>
 </project>
