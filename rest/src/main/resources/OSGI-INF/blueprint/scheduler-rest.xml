@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs">
+
+    <bean id="schedulerRootResource" class="be.guanaco.smx.scheduler.rest.RootResource"/>
+
+    <reference-list interface="be.guanaco.smx.scheduler.Task" availability="optional">
+        <reference-listener ref="schedulerRootResource" bind-method="addTask" unbind-method="removeTask"/>
+    </reference-list>
+
+    <bean id="cors-filter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
+
+    <jaxrs:server id="schedulerService" address="/scheduler">
+        <jaxrs:serviceBeans>
+            <ref component-id="schedulerRootResource" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref component-id="cors-filter"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+
+</blueprint>
