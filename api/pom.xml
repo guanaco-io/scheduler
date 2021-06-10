@@ -36,9 +36,9 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray-guanaco-io-scheduler</id>
-            <name>guanaco-io-scheduler</name>
-            <url>https://api.bintray.com/maven/guanaco-io/scheduler/api/;publish=1</url>
+            <id>github</id>
+            <name>GitHub Guanaco Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/guanaco-io/scheduler</url>
         </repository>
     </distributionManagement>
 </project>

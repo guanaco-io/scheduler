@@ -33,10 +33,21 @@
 
     <repositories>
         <repository>
-            <id>bintray-guanaco-io-alerta</id>
-            <url>https://dl.bintray.com/guanaco-io/alerta/</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/guanaco-io/alerta</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Guanaco Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/guanaco-io/scheduler</url>
+        </repository>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
