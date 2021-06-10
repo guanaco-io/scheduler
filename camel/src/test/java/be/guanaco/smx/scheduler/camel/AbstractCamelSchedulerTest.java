@@ -1,8 +1,9 @@
 package be.guanaco.smx.scheduler.camel;
 
-import be.guanaco.smx.alerta.api.Alerta$;
+import io.guanaco.alerta.api.Alerta$;
 import org.apache.activemq.camel.component.ActiveMQComponent;
 import org.apache.camel.CamelContext;
+import org.apache.camel.RoutesBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.test.junit4.CamelTestSupport;
 
@@ -23,8 +24,8 @@ public abstract class AbstractCamelSchedulerTest extends CamelTestSupport {
     }
 
     @Override
-    protected RouteBuilder[] createRouteBuilders() throws Exception {
-        return new RouteBuilder[] {
+    protected RoutesBuilder[] createRouteBuilders() throws Exception {
+        return new RoutesBuilder[] {
                 createAlertaMockRouteBuilder(),
                 createRouteBuilder()
         };

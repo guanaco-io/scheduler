@@ -2,8 +2,13 @@ package be.guanaco.smx.scheduler.camel
 
 import java.time.LocalDateTime
 
-import be.guanaco.smx.alerta.api.{Alert, Alerta, Heartbeat}
-import be.guanaco.smx.scheduler.camel.CamelTaskItem.{Full, Incremental, Operation, Subset}
+import io.guanaco.alerta.api.{Alert, Alerta, Heartbeat}
+import be.guanaco.smx.scheduler.camel.CamelTaskItem.{
+  Full,
+  Incremental,
+  Operation,
+  Subset
+}
 import be.guanaco.smx.scheduler.{Task, TaskStatus}
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.{Body, Handler, ProducerTemplate}

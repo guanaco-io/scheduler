@@ -1,6 +1,6 @@
 package be.guanaco.smx.scheduler.camel
 
-import be.guanaco.smx.alerta.impl.AlertaImpl
+import io.guanaco.alerta.impl.AlertaImpl
 import be.guanaco.smx.scheduler.Task
 import be.guanaco.smx.scheduler.camel.CamelTaskItem.Operation
 import org.apache.camel.builder.RouteBuilder
@@ -28,12 +28,15 @@ class ScalaCamelTaskRouteBuilderTest extends AbstractCamelSchedulerTest {
   @throws[Exception]
   override protected def createRouteBuilder: RouteBuilder = {
     val alerta = new AlertaImpl(context)
-    val builder: CamelTaskRouteBuilder = new CamelTaskRouteBuilder("TestTask", "*/5 * * * * ? *", alerta) {
-      override val camelTaskItems = Seq(new ScalaCamelTaskItem[String] {
-        override def bodies(operation: Operation): Stream[String] = Stream(MESSAGE_1, MESSAGE_2)
-        override def endpoints(body: String): Seq[String] = Seq(MOCK_TRIGGERED)
-      })
-    }
+    val builder: CamelTaskRouteBuilder =
+      new CamelTaskRouteBuilder("TestTask", "*/5 * * * * ? *", alerta) {
+        override val camelTaskItems = Seq(new ScalaCamelTaskItem[String] {
+          override def bodies(operation: Operation): Stream[String] =
+            Stream(MESSAGE_1, MESSAGE_2)
+          override def endpoints(body: String): Seq[String] =
+            Seq(MOCK_TRIGGERED)
+        })
+      }
     task = builder.getTask
     builder
   }

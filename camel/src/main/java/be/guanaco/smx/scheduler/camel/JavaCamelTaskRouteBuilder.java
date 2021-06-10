@@ -1,6 +1,6 @@
 package be.guanaco.smx.scheduler.camel;
 
-import be.guanaco.smx.alerta.api.Alerta;
+import io.guanaco.alerta.api.Alerta;
 import be.guanaco.smx.scheduler.Task;
 import org.apache.camel.builder.RouteBuilder;
 import scala.collection.JavaConversions;

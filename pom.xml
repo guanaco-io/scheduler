@@ -14,14 +14,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel.version>2.16.3</camel.version>
+        <camel.version>2.21.3</camel.version>
         <cxf.version>3.1.5</cxf.version>
         <activemq.version>5.13.3</activemq.version>
-        <scala.version>2.11.7</scala.version>
+        <scala.binary.version>2.12</scala.binary.version>
+        <scala.version>2.12.14</scala.version>
         <scalatest.version>3.0.4</scalatest.version>
         <slf4j.version>1.7.13</slf4j.version>
         <easymock.version>3.4</easymock.version>
-        <guanaco.alerta.version>1.0.0</guanaco.alerta.version>
+        <guanaco.alerta.version>2.0.7-SNAPSHOT</guanaco.alerta.version>
     </properties>
 
     <modules>
@@ -47,13 +48,13 @@
             </dependency>
             <!-- Other Guanaco dependencies -->
             <dependency>
-                <groupId>be.guanaco.smx.alerta</groupId>
-                <artifactId>api</artifactId>
+                <groupId>io.guanaco.alerta</groupId>
+                <artifactId>api_${scala.binary.version}</artifactId>
                 <version>${guanaco.alerta.version}</version>
             </dependency>
             <dependency>
-                <groupId>be.guanaco.smx.alerta</groupId>
-                <artifactId>impl</artifactId>
+                <groupId>io.guanaco.alerta</groupId>
+                <artifactId>impl_${scala.binary.version}</artifactId>
                 <version>${guanaco.alerta.version}</version>
             </dependency>
             <!-- Scala -->
@@ -116,7 +117,7 @@
             </dependency>
             <dependency>
                 <groupId>org.scalatest</groupId>
-                <artifactId>scalatest_2.11</artifactId>
+                <artifactId>scalatest_${scala.binary.version}</artifactId>
                 <version>${scalatest.version}</version>
                 <scope>test</scope>
             </dependency>
