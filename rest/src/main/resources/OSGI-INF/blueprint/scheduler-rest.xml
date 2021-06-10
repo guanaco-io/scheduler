@@ -2,9 +2,9 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
            xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs">
 
-    <bean id="schedulerRootResource" class="be.guanaco.smx.scheduler.rest.RootResource"/>
+    <bean id="schedulerRootResource" class="io.guanaco.scheduler.rest.RootResource"/>
 
-    <reference-list interface="be.guanaco.smx.scheduler.Task" availability="optional">
+    <reference-list interface="io.guanaco.scheduler.Task" availability="optional">
         <reference-listener ref="schedulerRootResource" bind-method="addTask" unbind-method="removeTask"/>
     </reference-list>
 

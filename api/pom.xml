@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>be.guanaco.smx</groupId>
+        <groupId>io.guanaco</groupId>
         <artifactId>scheduler</artifactId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>be.guanaco.smx.scheduler</groupId>
+    <groupId>io.guanaco.scheduler</groupId>
     <artifactId>api</artifactId>
 
     <packaging>bundle</packaging>
@@ -27,7 +27,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
-                        <Export-Package>be.guanaco.smx.scheduler</Export-Package>
+                        <Export-Package>io.guanaco.scheduler</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
