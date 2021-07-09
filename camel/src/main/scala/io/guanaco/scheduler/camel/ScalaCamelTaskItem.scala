@@ -12,8 +12,7 @@ trait ScalaCamelTaskItem[T] extends CamelTaskItem {
 
   def endpoints(body: T): Seq[String]
 
-  override def handle(template: ProducerTemplate,
-                      operation: Operation): Unit = {
+  override def handle(template: ProducerTemplate, operation: Operation): Unit = {
     bodies(operation) foreach { body =>
       endpoints(body) foreach { endpoint =>
         template.sendBody(endpoint, body)
