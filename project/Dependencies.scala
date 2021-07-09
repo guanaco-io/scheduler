@@ -15,11 +15,11 @@ object Dependencies {
     val jaxb          = "2.3.1"
   }
 
-  lazy val slf4jApi      = "org.slf4j"           % "slf4j-api"      % Versions.slf4j
-  lazy val slf4jLog4j    = "org.slf4j"           % "slf4j-log4j12"  % Versions.slf4j
-  lazy val camelCore     = "org.apache.camel"    % "camel-core"     % Versions.camel
-  lazy val camelQuartz   = "org.apache.camel"    % "camel-quartz"   % Versions.camel
-  lazy val activeMQCamel = "org.apache.activemq" % "activemq-camel" % Versions.activemq
+  lazy val slf4jApi      = "org.slf4j"        % "slf4j-api"      % Versions.slf4j
+  lazy val slf4jLog4j    = "org.slf4j"        % "slf4j-log4j12"  % Versions.slf4j
+  lazy val camelCore     = "org.apache.camel" % "camel-core"     % Versions.camel
+  lazy val camelQuartz   = "org.apache.camel" % "camel-quartz"   % Versions.camel
+  lazy val camelActiveMq = "org.apache.camel" % "camel-activemq" % Versions.camel
 
   lazy val cxfFrontend = "org.apache.cxf" % "cxf-rt-frontend-jaxrs"   % Versions.cxf
   lazy val cxfSecurity = "org.apache.cxf" % "cxf-rt-rs-security-cors" % Versions.cxf
@@ -38,7 +38,7 @@ object Dependencies {
     alertaApi,
     camelCore,
     camelQuartz,
-    activeMQCamel,
+    camelActiveMq,
     alertaImpl % Test,
     slf4jLog4j % Test,
     easyMock   % Test,
