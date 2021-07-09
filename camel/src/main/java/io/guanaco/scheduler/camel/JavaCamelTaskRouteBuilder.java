@@ -3,8 +3,8 @@ package io.guanaco.scheduler.camel;
 import io.guanaco.alerta.api.Alerta;
 import io.guanaco.scheduler.Task;
 import org.apache.camel.builder.RouteBuilder;
-import scala.collection.JavaConversions;
-import scala.collection.Seq;
+import scala.collection.JavaConverters;
+import scala.collection.immutable.Seq;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public abstract class JavaCamelTaskRouteBuilder extends CamelTaskRouteBuilder {
 
     @Override
     public Seq<CamelTaskItem> camelTaskItems() {
-        return JavaConversions.asScalaBuffer(getCamelTaskItems()).toSeq();
+        return JavaConverters.asScalaBuffer(getCamelTaskItems()).toSeq();
     }
 
     /**

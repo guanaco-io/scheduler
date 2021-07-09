@@ -1,46 +1,28 @@
-# scheduler
+# Scheduler
 
-## Installation
+## Release
 
-### Maven settings
-https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry
+### Local
 
-Create or edit your `~/.m2/settings.xml` file:
-```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+Publish to the local maven repository:
+```sbtshell
+sbt:alerta>+ publishM2
+```
 
-  <activeProfiles>
-    <activeProfile>github</activeProfile>
-  </activeProfiles>
+### Remote
 
-  <profiles>
-    <profile>
-      <id>github</id>
-      <repositories>
-        <repository>
-          <id>central</id>
-          <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-          <id>github</id>
-          <url>https://maven.pkg.github.com/guanaco-io/*</url>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-    </profile>
-  </profiles>
+This project uses GitHub Package Repository. In order to deploy a version of the packages, you need to set up a personal access token with `repo` and the three `*:packages` scopes.
+Cfr. [here](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) for more information on how to do that.
 
-  <servers>
-    <server>
-      <id>github</id>
-      <username>USERNAME</username>
-      <password>TOKEN</password>
-    </server>
-  </servers>
-</settings>
+Afterwards, make sure the access token is available in the `GITHUB_TOKEN` environment variable (we recommend using [direnv](https://direnv.net/)).
+
+See https://github.com/djspiewak/sbt-github-packages for additional authentication options to the Github Package Repository.
+
+Building and deploying a release:
+
+* run the `./release.sh <version>` script to create the release tag
+* checkout the release tag: `git checkout release-<version>`
+* run the release build to with
+```sbtshell
+sbt:alerta>+ clean test publish
 ```
