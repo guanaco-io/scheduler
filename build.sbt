@@ -44,7 +44,6 @@ lazy val camel = (project in file("camel"))
   .settings(commonSettings)
   .settings(
     name := "camel",
-    artifactClassifier := Some(s"camel-${Dependencies.Versions.camelBinary}"),
     description := "Camel route builders",
     crossScalaVersions := supportedScalaVersions,
     libraryDependencies ++= Dependencies.Camel

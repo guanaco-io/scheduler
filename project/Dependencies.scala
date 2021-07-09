@@ -4,7 +4,6 @@ object Dependencies {
 
   object Versions {
 
-    val camelBinary   = "3-9"
     val camel         = "3.9.0"
     val slf4j         = "1.7.13"
     val scalaTest     = "3.0.4"
