@@ -5,3 +5,6 @@ target
 *.iml
 *.ipr
 .idea
+
+.envrc
+.bsp
