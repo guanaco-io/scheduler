@@ -6,7 +6,7 @@ lazy val scala211               = "2.11.12"
 lazy val supportedScalaVersions = List(scala213, scala212, scala211)
 
 ThisBuild / scalaVersion := scala213
-ThisBuild / version := "1.0.1-SNAPSHOT"
+ThisBuild / version := "1.0.2-SNAPSHOT"
 ThisBuild / organization := "io.guanaco.scheduler"
 ThisBuild / organizationName := "Guanaco"
 
