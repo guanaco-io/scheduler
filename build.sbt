@@ -1,8 +1,7 @@
 import sbt.file
 
 lazy val scala213               = "2.13.6"
-lazy val scala212               = "2.12.14"
-lazy val supportedScalaVersions = List(scala213, scala212)
+lazy val supportedScalaVersions = List(scala213)
 
 ThisBuild / scalaVersion := scala213
 ThisBuild / version := "1.0.2-SNAPSHOT"
@@ -32,7 +31,7 @@ lazy val api = (project in file("api"))
   .settings(
     name := "api",
     description := "Scheduler public API",
-    crossScalaVersions := Nil,
+    crossScalaVersions := supportedScalaVersions,
     osgiSettings,
     OsgiKeys.exportPackage := List("io.guanaco.scheduler"),
     OsgiKeys.privatePackage := Nil,
@@ -59,7 +58,7 @@ lazy val rest = (project in file("rest"))
     name := "rest",
     description := "REST interface exposing an API to all registered scheduled tasks",
     libraryDependencies ++= Dependencies.Rest,
-    crossScalaVersions := Nil,
+    crossScalaVersions := supportedScalaVersions,
     osgiSettings,
     OsgiKeys.exportPackage := List(OsgiKeys.bundleSymbolicName.value),
     OsgiKeys.privatePackage := Nil,
