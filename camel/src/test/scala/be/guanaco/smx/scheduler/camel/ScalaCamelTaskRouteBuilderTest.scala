@@ -1,6 +1,6 @@
 package be.guanaco.smx.scheduler.camel
 
-import be.guanaco.smx.alerta.impl.AlertaImpl
+import io.guanaco.alerta.impl.AlertaImpl
 import be.guanaco.smx.scheduler.Task
 import be.guanaco.smx.scheduler.camel.CamelTaskItem.Operation
 import org.apache.camel.builder.RouteBuilder
