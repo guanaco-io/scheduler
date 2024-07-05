@@ -2,7 +2,7 @@ package be.guanaco.smx.scheduler.camel
 
 import java.time.LocalDateTime
 
-import be.guanaco.smx.alerta.api.{Alert, Alerta, Heartbeat}
+import io.guanaco.alerta.api.{Alert, Alerta, Heartbeat}
 import be.guanaco.smx.scheduler.camel.CamelTaskItem.{Full, Incremental, Operation, Subset}
 import be.guanaco.smx.scheduler.{Task, TaskStatus}
 import org.apache.camel.builder.RouteBuilder
@@ -23,7 +23,7 @@ abstract class CamelTaskRouteBuilder(identifier: String, schedule: String, perio
   val task = new CamelTask(identifier, schedule)
   val endpoint = s"seda://trigger.for.$identifier"
 
-  val camelTaskItems: Seq[CamelTaskItem]
+  def camelTaskItems: Seq[CamelTaskItem]
 
   /**
     * Get the task instance that is being implemented by this route

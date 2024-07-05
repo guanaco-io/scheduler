@@ -1,6 +1,6 @@
 package be.guanaco.smx.scheduler.camel;
 
-import be.guanaco.smx.alerta.api.Alerta$;
+import io.guanaco.alerta.api.Alerta$;
 import org.apache.activemq.camel.component.ActiveMQComponent;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;

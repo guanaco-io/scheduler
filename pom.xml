@@ -6,7 +6,7 @@
 
     <groupId>be.guanaco.smx</groupId>
     <artifactId>scheduler</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>Guanaco :: Scheduler</name>
@@ -17,11 +17,11 @@
         <camel.version>2.16.3</camel.version>
         <cxf.version>3.1.5</cxf.version>
         <activemq.version>5.13.3</activemq.version>
-        <scala.version>2.11.7</scala.version>
+        <scala.version>2.13.12</scala.version>
         <scalatest.version>3.0.4</scalatest.version>
         <slf4j.version>1.7.13</slf4j.version>
         <easymock.version>3.4</easymock.version>
-        <guanaco.alerta.version>1.0.0</guanaco.alerta.version>
+        <guanaco.alerta.version>2.1.0-SNAPSHOT</guanaco.alerta.version>
     </properties>
 
     <modules>
@@ -32,7 +32,7 @@
 
     <repositories>
         <repository>
-            <id>bintray-guanaco-io-alerta</id>
+            <id>github-guanaco-io-alerta</id>
             <url>https://dl.bintray.com/guanaco-io/alerta/</url>
         </repository>
     </repositories>
@@ -47,13 +47,13 @@
             </dependency>
             <!-- Other Guanaco dependencies -->
             <dependency>
-                <groupId>be.guanaco.smx.alerta</groupId>
-                <artifactId>api</artifactId>
+                <groupId>io.guanaco.alerta</groupId>
+                <artifactId>api_2.13</artifactId>
                 <version>${guanaco.alerta.version}</version>
             </dependency>
             <dependency>
-                <groupId>be.guanaco.smx.alerta</groupId>
-                <artifactId>impl</artifactId>
+                <groupId>io.guanaco.alerta</groupId>
+                <artifactId>impl_2.13</artifactId>
                 <version>${guanaco.alerta.version}</version>
             </dependency>
             <!-- Scala -->
@@ -116,7 +116,7 @@
             </dependency>
             <dependency>
                 <groupId>org.scalatest</groupId>
-                <artifactId>scalatest_2.11</artifactId>
+                <artifactId>scalatest_2.13</artifactId>
                 <version>${scalatest.version}</version>
                 <scope>test</scope>
             </dependency>
@@ -137,7 +137,7 @@
                 <plugin>
                     <groupId>net.alchim31.maven</groupId>
                     <artifactId>scala-maven-plugin</artifactId>
-                    <version>3.2.2</version>
+                    <version>4.8.1</version>
                     <executions>
                         <execution>
                             <id>scala-compile</id>
